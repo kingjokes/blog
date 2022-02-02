@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+
+<%- include('../partials/nav.ejs')%>
+<div class="w3-padding-64">
+    <div class="w3-row">
+        <div class="w3-col l1 m12 s12">
+            &nbsp;
+        </div>
+        <div class="w3-col l10 m12 s12">
+            <form method="post" action="/blogs">
+                <label for="title" class="w3-text-grey">Blog Title:</label>
+                <input type="text" id="title" required name="title" class="w3-input w3-border w3-round-medium">
+                <br>
+                <label for="snippet" class="w3-text-grey">Blog Title:</label>
+                <input type="text" id="snippet" name="snippet" required class="w3-input w3-border w3-round-medium">
+                <br>
+                <label for="body" class="w3-text-grey">Blog Body:</label>
+                <textarea rows="7" id="body" required name="body" class="w3-input w3-border w3-round-medium"></textarea>
+                <br>
+                <button type="submit" class="w3-btn w3-red w3-hover-blue w3-round-medium">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<%- include('../partials/footer.ejs')%>

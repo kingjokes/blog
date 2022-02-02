@@ -1,0 +1,40 @@
+
+<%- include('../partials/header.ejs') %>
+
+<%- include('../partials/nav.ejs')%>
+
+
+<div class="w3-padding-32">
+    <div class="w3-row">
+        <div class="w3-col l1 m12 s12">
+            &nbsp;
+        </div>
+        <div class="w3-col l10 m12 s12">
+            <h2><%= blog.title %></h2>
+           <p><%= blog.snippet%></p>
+           <p><%= blog.body%></p>
+            <p>
+                <a data-doc="<%= blog._id%>" class="delete w3-btn w3-small w3-red w3-round-medium">Delete Blog</a>
+            </p>
+        </div>
+    </div>
+    <script>
+        const trashCan = document.querySelector('a.delete')
+        trashCan.addEventListener('click',(e)=>{
+            e.preventDefault()
+            const endPoint =`/blogs/${trashCan.dataset.doc}`
+
+            fetch(endPoint,{
+                method:'delete',
+            }).then(response=>response.json())
+            .then((response)=>{
+                window.alert('Blog deleted successfully')
+                window.location.href=response.redirect
+            }).catch(error=>console.log(error))
+        })
+
+    </script>
+
+</div>
+
+<%- include('../partials/footer.ejs')%>

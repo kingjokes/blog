@@ -1,0 +1,37 @@
+
+<%- include('../partials/header.ejs') %>
+
+<%- include('../partials/nav.ejs')%>
+
+
+<div class="w3-padding-32">
+    <div class="w3-row">
+        <div class="w3-col l1 m12 s12">
+            &nbsp;
+        </div>
+        <div class="w3-col l10 m12 s12">
+            <h2>All Blogs</h2>
+            <% if(blogs.length>0){
+            blogs.forEach((blog)=>{    %>
+            <div class="w3-leftbar w3-margin-bottom w3-border-red w3-padding">
+                <a class="" href="/blogs/<%= blog.id%>">
+                    <h3 class="title w3-large" style="font-weight: bold"><%=blog.title %></h3>
+                    <span class="w3-text-grey"><%=blog.snippet %></span>
+                </a>
+            </div>
+
+
+            <%
+            })
+            }
+            else{ %>
+                <p>No blogs to display</p>
+            <%
+            }
+            %>
+        </div>
+    </div>
+
+</div>
+
+<%- include('../partials/footer.ejs')%>
