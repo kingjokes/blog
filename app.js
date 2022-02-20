@@ -14,7 +14,7 @@ mongoose.connect(dbURI)
     .then((result)=>{
         console.log('connected to db')
         //listen for requests
-        app.listen(3000)
+        app.listen(2000)
     })
     .catch((error)=>console.log(error))
 //register view engine
